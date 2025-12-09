@@ -1,4 +1,4 @@
-package survivalblock.fdapi_4933_min_repro.mixin;
+package survivalblock.fdapi_4943_min_repro.mixin;
 
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
@@ -9,10 +9,10 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 public interface EntitySpawnS2CPacketAccessor {
 
     @Invoker("write")
-    void yeahyeah$write(RegistryByteBuf buf);
+    void fdapi_4943_min_repro$invokeWrite(RegistryByteBuf buf);
 
     @Invoker("<init>")
-    static EntitySpawnS2CPacket $fromByteBuf(RegistryByteBuf buf) {
+    static EntitySpawnS2CPacket fdapi_4943_min_repro$invokeInit(RegistryByteBuf buf) {
         throw new UnsupportedOperationException("mixin boo womp");
     }
 }

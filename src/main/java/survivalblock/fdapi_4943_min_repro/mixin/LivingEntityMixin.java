@@ -1,4 +1,4 @@
-package survivalblock.fdapi_4933_min_repro.mixin;
+package survivalblock.fdapi_4943_min_repro.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import survivalblock.fdapi_4933_min_repro.FDAPI4943MinReproduction;
+import survivalblock.fdapi_4943_min_repro.FDAPI4943MinReproduction;
 
 @SuppressWarnings("UnstableApiUsage")
 @Mixin(LivingEntity.class)
