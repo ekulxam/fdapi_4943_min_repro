@@ -18,7 +18,10 @@
 	"entrypoints": {
 		"main": [
 			"survivalblock.fdapi_4933_min_repro.FDAPI4943MinReproduction"
-		]
+		],
+        "client": [
+            "survivalblock.fdapi_4933_min_repro.FDAPI4943MinReproClient"
+        ]
 	},
 	"mixins": [
 		"fdapi_4933_min_repro.mixins.json"

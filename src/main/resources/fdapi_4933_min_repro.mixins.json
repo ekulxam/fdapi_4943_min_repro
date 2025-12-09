@@ -1,14 +1,16 @@
 {
-	"required": true,
-	"package": "survivalblock.fdapi_4933_min_repro.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-      "LivingEntityMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "survivalblock.fdapi_4933_min_repro.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntitySpawnS2CPacketAccessor",
+    "LivingEntityMixin",
+    "WolfEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }
