@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "fdapi_4933_min_repro",
+	"version": "${version}",
+	"name": "FDAPI#4943 Min Reproduction",
+	"description": "Attempt to reproduce FabricMC/fabric#4933",
+	"authors": [
+		"Survivalblock"
+	],
+	"contact": {
+		"homepage": "https://github.com/ekulxam/fdapi_4943_min_repro",
+		"sources": "https://github.com/ekulxam/fdapi_4943_min_repro",
+        "issues": "https://github.com/ekulxam/fdapi_4943_min_repro/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/fdapi_4933_min_repro/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"survivalblock.fdapi_4933_min_repro.FDAPI4943MinReproduction"
+		]
+	},
+	"mixins": [
+		"fdapi_4933_min_repro.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.1",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
