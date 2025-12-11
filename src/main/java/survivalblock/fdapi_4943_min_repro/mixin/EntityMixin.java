@@ -10,6 +10,7 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import survivalblock.fdapi_4943_min_repro.FDAPI4943MinReproduction;
 import survivalblock.fdapi_4943_min_repro.SpawnPacketWrapper;
 
 @Mixin(Entity.class)
@@ -20,6 +21,9 @@ public class EntityMixin {
     @SuppressWarnings("unchecked")
     @ModifyReturnValue(method = "createSpawnPacket", at = @At("RETURN"))
     private Packet<ClientPlayPacketListener> funnyCrash(Packet<ClientPlayPacketListener> original) {
+        if (FDAPI4943MinReproduction.DEBUG_PLAYERS) {
+            return original;
+        }
         if (!((Entity) (Object) this instanceof LivingEntity)) {
             return original;
         }

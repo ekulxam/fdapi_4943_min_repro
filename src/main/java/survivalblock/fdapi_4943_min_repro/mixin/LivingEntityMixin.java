@@ -3,6 +3,7 @@ package survivalblock.fdapi_4943_min_repro.mixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,6 +21,10 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "tick", at = @At("HEAD"))
 	private void maybeCrashPlease(CallbackInfo info) {
         if (!this.getWorld().isClient() && this.age % 20 == 0) {
+            if (FDAPI4943MinReproduction.DEBUG_PLAYERS && !((LivingEntity) (Object) this instanceof PlayerEntity)) {
+                return;
+            }
+
             this.setAttached(FDAPI4943MinReproduction.DATA, this.random.nextBetween(0, 99));
         }
 	}

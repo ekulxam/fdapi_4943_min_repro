@@ -15,14 +15,17 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("UnstableApiUsage")
 public class FDAPI4943MinReproduction implements ModInitializer {
 	public static final String MOD_ID = "fdapi_4943_min_repro";
+    public static final boolean DEBUG_PLAYERS = true;
+    public static final boolean BYPASS_CUSTOM_PAYLOAD_EXECUTE = false;
     @SuppressWarnings("unused")
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public static final AttachmentType<Integer> DATA = AttachmentRegistry.<Integer>builder()
-            .initializer(() -> 0)
-            .persistent(Codec.INT)
-            .syncWith(PacketCodecs.VAR_INT, AttachmentSyncPredicate.all())
-            .buildAndRegister(Identifier.of(MOD_ID, "data"));
+    public static final AttachmentType<Integer> DATA = AttachmentRegistry.create(
+            Identifier.of(MOD_ID, "data"),
+            builder -> builder.initializer(() -> 0)
+                    .persistent(Codec.INT)
+                    .syncWith(PacketCodecs.VAR_INT, AttachmentSyncPredicate.all())
+    );
 
 	@Override
 	public void onInitialize() {

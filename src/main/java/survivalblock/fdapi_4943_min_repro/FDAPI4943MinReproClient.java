@@ -11,7 +11,6 @@ import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 
 public class FDAPI4943MinReproClient implements ClientModInitializer {
-    public static final boolean BYPASS_CUSTOM_PAYLOAD_EXECUTE = false;
 
     @Override
     public void onInitializeClient() {

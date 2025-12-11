@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import survivalblock.fdapi_4943_min_repro.FDAPI4943MinReproClient;
+import survivalblock.fdapi_4943_min_repro.FDAPI4943MinReproduction;
 
 @Debug(export = true)
 @Mixin(ClientPlayNetworkAddon.class)
@@ -19,7 +20,7 @@ public class ClientPlayNetworkAddonMixin {
 
     @Inject(method = "receive(Lnet/fabricmc/fabric/api/client/networking/v1/ClientPlayNetworking$PlayPayloadHandler;Lnet/minecraft/network/packet/CustomPayload;)V", at = @At("HEAD"), cancellable = true)
     private void noExecute(ClientPlayNetworking.PlayPayloadHandler<?> handler, CustomPayload payload, CallbackInfo ci) {
-        if (!FDAPI4943MinReproClient.BYPASS_CUSTOM_PAYLOAD_EXECUTE) {
+        if (!FDAPI4943MinReproduction.BYPASS_CUSTOM_PAYLOAD_EXECUTE) {
             return;
         }
 
