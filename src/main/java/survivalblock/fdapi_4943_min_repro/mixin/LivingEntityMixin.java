@@ -19,6 +19,8 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "tick", at = @At("HEAD"))
 	private void maybeCrashPlease(CallbackInfo info) {
-        this.setAttached(FDAPI4943MinReproduction.DATA, this.random.nextBetween(0, 99));
+        if (!this.getWorld().isClient() && this.age % 20 == 0) {
+            this.setAttached(FDAPI4943MinReproduction.DATA, this.random.nextBetween(0, 99));
+        }
 	}
 }
